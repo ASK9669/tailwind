@@ -2,194 +2,248 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio withTailwind </title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio with TailScript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuration to enable 'class' based dark mode
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
 </head>
 
-<body class="bg-green-100 text-gray-800 scroll-smooth">
-  <!-- Navbar -->
-  <section class="bg-green-600 text-black p-2">
-    <div class="container mx-auto flex justify-between items-center">
+<body
+    class="bg-green-100 dark:bg-slate-900 text-gray-800 dark:text-gray-100 transition-colors duration-300 scroll-smooth">
+    <!-- Navbar -->
+    <section class="bg-green-600 dark:bg-green-900 text-black dark:text-white p-2 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
 
-      <!-- Logo -->
-      <img src="./ASKlogo.jpeg" alt="ASK Logo" class="h-13 w-14 rounded-full border-4 border-blue-900">
+            <!-- Logo and Dark Mode Toggle -->
+            <div class="flex items-center space-x-4">
+                <img src="./ASKlogo.jpeg" alt="ASK Logo" class="h-12 w-12 rounded-full border-4 border-blue-900">
+                <button id="dark-mode-toggle" class="p-2 rounded-full bg-white/20 hover:bg-white/40 transition">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
 
-      <!-- Desktop Menu -->
-      <nav class="hidden md:block">
-        <ul class="flex space-x-5">
-          <li><a href="#home" class="hover:text-yellow-100">Home</a></li>
-          <li><a href="#about" class="hover:text-yellow-100">About</a></li>
-          <li><a href="#services" class="hover:text-yellow-100">Services</a></li>
-          <li><a href="#contact" class="hover:text-yellow-100">Contact</a></li>
-        </ul>
-      </nav>
+            <!-- Desktop Menu -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-5">
+                    <li><a href="#home" class="hover:text-yellow-100">Home</a></li>
+                    <li><a href="#about" class="hover:text-yellow-100">About</a></li>
+                    <li><a href="#services" class="hover:text-yellow-100">Services</a></li>
+                    <li><a href="#contact" class="hover:text-yellow-100">Contact</a></li>
+                </ul>
+            </nav>
 
-      <!-- Mobile Button -->
-      <button id="menu-btn" class="md:hidden text-2xl ">☰</button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden py-4 px-3 ">
-      <ul class="flex flex-col space-y-2">
-        <li><a href="#home" class="hover:text-yellow-100">Home</a></li>
-        <li><a href="#about" class="hover:text-yellow-100">About</a></li>
-        <li><a href="#services" class="hover:text-yellow-100">Services</a></li>
-        <li><a href="#contact" class="hover:text-yellow-100">Contact</a></li>
-      </ul>
-    </div>
-  </section>
-  </section>
-  <!-- hero section -->
-  <section id="home" class="containr  mx-auto px-10 py-13 flex flex-col md:flex-row items-center  bg-[url('./web4.jpg')] bg-cover bg-center bg-no-repeat py-20 text-white ">
-    <div class="md:w-1/2">
-      <h1 class="text-4xl md:text-7xl font-bold mb-4 text-green-500">
-        I'm Awel
-      </h1>
-      <p class="text-4xl md:text-5xl italic mb-4 text-black font-bold">
-        I'm Software Engineer , Web Developer and Mobile App Developer
-      </p>
-
-      <button class="bg-blue-600 text-white px-4 py-3 rounded hover:bg-blue-800 transition">
-        Show more
-      </button>
-    </div>
-    <div class="md:w-1/2 mt-7 md:mt-0">
-      <!-- <img src="./web.jpg" class="w-80 h-100"> -->
-    </div>
-  </section>
-  <!-- about section -->
-  <section id="about" class="py-10 bg-green-100 md:py-24">
-    <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-        <!-- Image Column -->
-        <div>
-          <img src="./web2.jpg"
-            alt="Person reviewing website design layouts on a laptop in a bright modern workspace with creative tools nearby"
-            class="rounded-2xl shadow-5xl h-70 w-60">
+            <!-- Mobile Button -->
+            <button id="menu-btn" class="md:hidden text-2xl">☰</button>
         </div>
-        <!-- Text Column -->
-        <div>
-          <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">Full stack Web Developer</p>
-          <p class="mt-4 text-lg text-black leading-relaxed"> I'm a web designer with a passion for creating beautiful
-            and functional websites. I strive to make the user
-            experience as seamless as possible.I'm
-            Web developer in progress, always exploring new technologies to create impactful digital experiences. I
-            believe in learning, building, and growing every day.</p>
-          <a href="#" class="mt-8 inline-block px-6 py-3 bg-blue-600 text-white rounded-md">Learn more</a>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden py-4 px-3 bg-green-700 dark:bg-green-950">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="#home" class="hover:text-yellow-100">Home</a></li>
+                <li><a href="#about" class="hover:text-yellow-100">About</a></li>
+                <li><a href="#services" class="hover:text-yellow-100">Services</a></li>
+                <li><a href="#contact" class="hover:text-yellow-100">Contact</a></li>
+            </ul>
         </div>
-      </div>
-    </div>
-  </section>
-  <!--service-->
-  <section id="services" class="container mx-auto px-6 py-10">
-  <h2 class="text-3xl font-bold text-center mb-2">My Services</h2>
-  <p class=" text-black font-bold italic mb-12">
-    I provide high-quality web development services to help individuals and businesses build a strong online presence.
-  </p>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-    <!-- Web Design -->
-    <div class="bg-white p-3 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-green-500 hover:text-white transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Web Design</h3>
-      <p>
-        I design clean, modern, and visually appealing website layouts that attract users and improve user experience.
-      </p>
-    </div>
-
-    <!-- Frontend Development -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-green-500 hover:text-white transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Frontend Development</h3>
-      <p>
-        I build responsive and interactive websites using HTML, CSS, JavaScript, and modern frameworks.
-      </p>
-    </div>
-
-    <!-- Backend Development -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-green-500 hover:text-white transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">Backend Development</h3>
-      <p>
-        I develop server-side logic, manage databases, and create secure and scalable web applications.
-      </p>
-    </div>
-
-    <!-- UI/UX Design -->
-    <div class="bg-white p-6 rounded-xl shadow hover:shadow-xl hover:scale-105 hover:bg-green-500 hover:text-white transition duration-300">
-      <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
-      <p>
-        I design user-friendly interfaces focused on smooth navigation and a great user experience.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-  <!-- contact -->
-  <fieldset  id ="contact" class="border-2 border-green-300 rounded-lg mx-4 md:mx-20 container py-3">
-    <legend>Contact me</legend>
-    <section id="contact">
-
-      <div class="max-w-md mx-auto bg-white p-6 rounded shadow">
-        <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
-
-        <input type="text" placeholder="Name" class="w-full p-2 border mb-3 rounded">
-        <input type="email" placeholder="Email" class="w-full p-2 border mb-3 rounded">
-        <textarea placeholder="Message" class="w-full p-2 border mb-3 rounded"></textarea>
-
-        <button class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-800">
-          Send
-        </button>
-        <p class="pt-5 font-bold italic">follow me on:
-        <ul class="flex space-x-4 mt-2 bg-green-100 container p-2 rounded">
-          <li><a href="https://et.linkedin.com/in/awel-surur-81577b351"
-              class="text-blue-500 hover:bg-blue-600 rounded py-1 px-2 hover:text-white">LinkedIn</a></li>
-          <li><a href="https://t.me/ASK9669"
-              class="text-blue-500 hover:bg-blue-600 rounded py-1 px-2 hover:text-white">Telegram</a></li>
-          <li><a href="https://x.com/AwelSuur69"
-              class="text-blue-500 hover:bg-blue-600 rounded py-1 px-2 hover:text-white">Twitter</a></li>
-        </ul>
-      </div>
     </section>
-  </fieldset>
-  <!-- footer -->
 
-  <footer class="bg-green-500 text-black text-center p-4">
-    <p class="text-black"> © copyright <b>Awel Surur Kemer </b>|2026</p>
-  </footer>
+    <!-- hero section -->
+    <section id="home"
+        class="relative min-h-[70vh] flex flex-col md:flex-row items-center bg-[url('./web4.jpg')] bg-cover bg-center text-white">
+        <div class="absolute inset-0 bg-black/60"></div> <!-- Dark Overlay -->
+        <div class="relative container mx-auto px-10 py-20 z-10">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-7xl font-bold mb-4 text-green-500">I'm Awel</h1>
+                <p class="text-3xl md:text-4xl italic mb-4 font-bold">Software Engineer , Web Developer and Mobile App Developer</p>
+                <button class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-800 transition">Show more</button>
+            </div>
+        </div>
+    </section>
 
-  <script>
-    const btn = document.getElementById("menu-btn");
-    const menu = document.getElementById("mobile-menu");
+    <!-- about section -->
+    <section id="about" class="py-16 bg-white dark:bg-slate-800 md:py-24">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="./web2.jpg" alt="Awel working" class="rounded-2xl shadow-xl h-80 w-full object-cover">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-extrabold text-gray-900 dark:text-green-400 sm:text-4xl">Full stack Web
+                        Developer</h2>
+                    <p class="mt-4 text-lg leading-relaxed">
+                        I'm a web designer with a passion for creating beautiful and functional websites.
+                        I'm a Web developer in progress, always exploring new technologies to create impactful digital
+                        experiences.
+                    </p>
+                    <a href="#"
+                        class="mt-8 inline-block px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700">Learn
+                        more</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    btn.addEventListener("click", () => {
-      menu.classList.toggle("hidden"); 
-    });
+    <!-- service -->
+    <section id="services" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center mb-8">My Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class=" bg-white dark:bg-slate-700 
+            hover:bg-green-500 
+            dark:hover:bg-green-600 
+            transition duration-300 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Web Design</h3>
+                <p>I design clean, modern, and visually appealing website layouts.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-700 
+            hover:bg-green-500 
+            dark:hover:bg-green-600 
+            transition duration-300 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Frontend</h3>
+                <p>I build responsive websites using HTML, CSS, JavaScript, and Tailwind.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-700 
+            hover:bg-green-500 
+            dark:hover:bg-green-600 
+            transition duration-300 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">Backend</h3>
+                <p>I develop server-side logic and manage secure databases.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-700 
+            hover:bg-green-500 
+            dark:hover:bg-green-600 
+            transition duration-300 p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold mb-2">UI/UX</h3>
+                <p>I design user-friendly interfaces focused on smooth navigation.</p>
+            </div>
+        </div>
+    </section>
 
-    const form = document.getElementById("contactForm");
-const name = document.getElementById("name");
-const email = document.getElementById("email");
-const error = document.getElementById("error");
+    <!-- contact -->
+    <section id="contact" class="container mx-auto py-16 px-6">
+        <div class="max-w-md mx-auto bg-white dark:bg-slate-800 p-8 rounded-xl shadow-2xl border-t-4 border-green-500">
+            <h2 class="text-2xl font-bold mb-6 text-center">Contact Me</h2>
+            <form id="contactForm" class="space-y-4">
+                <input type="text" id="name" placeholder="Name"
+                    class="w-full p-3 border rounded dark:bg-slate-700 dark:border-slate-600">
+                <input type="email" id="email" placeholder="Email"
+                    class="w-full p-3 border rounded dark:bg-slate-700 dark:border-slate-600">
+                <textarea placeholder="Message"
+                    class="w-full p-3 border rounded h-32 dark:bg-slate-700 dark:border-slate-600"></textarea>
+                <button type="submit"
+                    class="w-full bg-blue-600 text-white py-3 rounded font-bold hover:bg-blue-800 transition">Send</button>
+                <p id="error" class="text-sm font-semibold mt-2"></p>
+            </form>
+            <div class="mt-6 border-t pt-4">
+                <p class="italic mb-2">Follow me on:</p>
+                <ul class="flex space-x-4 mt-2 bg-gren-100 container p-2 rounded">
+                    <li><a href="https://et.linkedin.com/in/awel-surur-81577b351"
+                            class="text-blue-500 hover:bg-blue-600 rounded py-1 px-2 hover:text-white">LinkedIn</a></li>
+                    <li><a href="https://t.me/ASK9669"
+                            class="text-blue-500 hover:bg-blue-600 rounded py-1 px-2 hover:text-white">Telegram</a></li>
+                    <li><a href="https://x.com/AwelSuur69"
+                            class="text-blue-500 hover:bg-blue-600 rounded py-1 px-2 hover:text-white">Twitter</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // stop form from submitting
+    <!-- footer -->
+    <footer class="bg-green-500 dark:bg-green-950 text-white text-center p-6">
+        <p>© copyright <b>Awel Surur Kemer </b>|| 2026 </p>
+    </footer>
 
-  if (name.value === "" || email.value === "") {
-    error.textContent = "⚠️ Please fill all fields";
-    return;
-  }
+    <script>
+        // Menu Toggle
+        const btn = document.getElementById("menu-btn");
+        const menu = document.getElementById("mobile-menu");
+        btn.addEventListener("click", () => menu.classList.toggle("hidden"));
 
-  if (!email.value.includes("@")) {
-    error.textContent = "⚠️ Please enter a valid email";
-    return;
-  }
+        // Dark Mode Logic
+        const themeBtn = document.getElementById("dark-mode-toggle");
+        const themeIcon = document.getElementById("theme-icon");
 
-  error.textContent = "✅ Form submitted successfully!";
-});
-  </script>
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+            themeIcon.innerText = "☀️";
+        }
 
+        themeBtn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+            if (document.documentElement.classList.contains("dark")) {
+                localStorage.setItem("theme", "dark");
+                themeIcon.innerText = "☀️";
+            } else {
+                localStorage.setItem("theme", "light");
+                themeIcon.innerText = "🌙";
+            }
+        });
+
+        // Form Logic
+        const form = document.getElementById("contactForm");
+        const errorMsg = document.getElementById("error");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            if (!name || !email) {
+                errorMsg.className = "text-red-500";
+                errorMsg.textContent = "⚠️ Please fill all fields";
+            } else {
+                errorMsg.className = "text-green-500";
+                errorMsg.textContent = "✅ Message sent successfully!";
+                form.reset();
+            }
+        });
+    </script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
